@@ -1,0 +1,38 @@
+import styled from 'styled-components';
+
+const ButtonClickMe = () => {
+  return (
+    <StyledWrapper>
+      <button>Click me</button>
+    </StyledWrapper>
+  );
+}
+
+const StyledWrapper = styled.div`
+  button {
+    --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+    --accent: fuchsia;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+    box-shadow: 13px 13px 10px #1c1c1c, -13px -13px 10px #262626;
+  }
+
+  button:hover {
+    box-shadow: var(--hover-shadows);
+  }
+
+  button:active {
+    box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+    background-color: var(--accent);
+    transform: scale(0.95);
+  }`;
+
+export default ButtonClickMe;
