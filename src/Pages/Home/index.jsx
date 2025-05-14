@@ -30,7 +30,6 @@ function App() {
 
       return () => clearTimeout(timeout);
     } else if (!digitando && indiceMensagem < mensagens.length - 1) {
-      // Espera 1.5s antes de ir para a próxima
       const pausa = setTimeout(() => {
         setIndiceMensagem(indiceMensagem + 1);
         setIndiceLetra(0);
@@ -40,7 +39,6 @@ function App() {
 
       return () => clearTimeout(pausa);
     } else if (!digitando && indiceMensagem === mensagens.length - 1) {
-      // Finalizou todas as mensagens
       const fim = setTimeout(() => setMostrarConteudo(true), 2000);
       return () => clearTimeout(fim);
     }
