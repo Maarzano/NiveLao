@@ -1,0 +1,133 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# ===============================
+# Node / React
+# ===============================
+node_modules/
+build/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite or Parcel (caso use)
+.vite/
+.cache/
+.parcel-cache/
+
+# ===============================
+# Editor - VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# Editor - JetBrains (IntelliJ, WebStorm, etc.)
+# ===============================
+.idea/
+*.iml
+out/
+
+# ===============================
+# OS - Windows / Mac / Linux
+# ===============================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# ===============================
+# Docker
+# ===============================
+docker-compose.override.yml
+docker-compose.local.yml
+.docker/
+Dockerfile.local
+*.tar
+*.pid
+
+# ===============================
+# Misc
+# ===============================
+coverage/
+*.tgz
+*.gz
+*.zip
+*.rar
+*.7z
+*.bak
+*.swp
+*.swo
+*.swn
+*.tmp
+*.temp
+.cache/
+.pnpm-debug.log
+
+# ===============================
+# Test output
+# ===============================
+jest-coverage/
+cypress/videos/
+cypress/screenshots/
+
+# ===============================
+# Log files
+# ===============================
+*.log
+logs/
+*.log.*
+
+# ===============================
+# Local SSL certs
+# ===============================
+*.pem
+*.key
+*.crt
+
+# ===============================
+# Optional: Ignore React-specific files you don't want versioned
+# ===============================
+.eslintcache
+.prettierignore
+stylelint.config.js
