@@ -48,7 +48,7 @@ function App() {
     <div className="app-container">
       {!mostrarConteudo ? (
         <div className="tela-inicial">
-          <p className="digitando">{texto}<span className="cursor">|</span></p>
+          <p className="digitando">{texto}<span className="cursor"> </span></p>
         </div>
       ) : (
         <div className="conteudo-principal fade-in">
