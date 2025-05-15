@@ -18,7 +18,7 @@ body, html {
 }
 
 .tela-inicial {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ff4da6;
 }
 
@@ -88,3 +88,9 @@ h1 {
   background: #ff3366;
   box-shadow: 0 0 20px #ff3366;
 }
+
+.botao-celebrar:active {
+    box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+    background-color: var(--accent);
+    transform: scale(0.95);
+  }
