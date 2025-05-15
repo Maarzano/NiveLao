@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './styles.css';
+import MainView from '../../Components/MainView';
 
 const mensagens = [
   'Olá, leãozinho!!',
@@ -13,8 +14,8 @@ function App() {
   const [indiceMensagem, setIndiceMensagem] = useState(0);
   const [indiceLetra, setIndiceLetra] = useState(0);
   const [digitando, setDigitando] = useState(true);
-
   const [mostrarConteudo, setMostrarConteudo] = useState(false);
+  const [celebrar, setCelebrar] = useState(false);
 
   useEffect(() => {
     if (digitando && indiceMensagem < mensagens.length) {
@@ -44,6 +45,8 @@ function App() {
     }
   }, [digitando, indiceMensagem, indiceLetra]);
 
+  if (celebrar) return <MainView />;
+
   return (
     <div className="app-container">
       {!mostrarConteudo ? (
@@ -59,7 +62,7 @@ function App() {
             <span className="coraçao">❤️</span>
             <span className="balao">🎈</span>
           </div>
-          <button className="botao-celebrar">Celebrar!</button>
+          <button className="botao-celebrar" onClick={() => setCelebrar(true)}>Celebrar!</button>
         </div>
       )}
     </div>
