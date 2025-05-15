@@ -59,7 +59,7 @@ const Imagem = styled.img`
 `;
 
 const Contador = styled.div`
-  margin: 0px 10px;
+  margin: 0px 6vh;
   font-size: 1rem;
   margin-bottom: 20px;
 `;
