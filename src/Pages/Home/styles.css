@@ -58,6 +58,11 @@ body, html {
   }
 }
 
+@keyframes lion-bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-18px);}
+}
+
 h1 {
   color: #ff4da6;
   font-size: 2rem;
@@ -93,4 +98,14 @@ h1 {
     box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
     background-color: var(--accent);
     transform: scale(0.95);
-  }
+}
+
+.botao-celebrar-animado {
+  box-shadow: 0 0 18px #ff4da6, 0 0 32px #ffb34755;
+  animation: pulse-celebrar 1.2s infinite alternate;
+}
+
+@keyframes pulse-celebrar {
+  0% { box-shadow: 0 0 18px #ff4da6, 0 0 32px #ffb34755; }
+  100% { box-shadow: 0 0 32px #ff4da6, 0 0 48px #ffb34799; }
+}

@@ -51,6 +51,19 @@ function App() {
     <div className="app-container">
       {!mostrarConteudo ? (
         <div className="tela-inicial">
+          {/* Emoji de leão animado */}
+          <span
+            style={{
+              fontSize: '3.2rem',
+              display: 'block',
+              marginBottom: '18px',
+              animation: 'lion-bounce 1.2s infinite alternate'
+            }}
+            role="img"
+            aria-label="leão"
+          >
+            🦁
+          </span>
           <p className="digitando">{texto}<span className="cursor"> </span></p>
         </div>
       ) : (
@@ -62,7 +75,25 @@ function App() {
             <span className="coraçao">❤️</span>
             <span className="balao">🎈</span>
           </div>
-          <button className="botao-celebrar" onClick={() => setCelebrar(true)}>Celebrar!</button>
+          {/* Botão com efeito de brilho/pulso */}
+          <button
+            className="botao-celebrar botao-celebrar-animado"
+            onClick={() => setCelebrar(true)}
+          >
+            Celebrar!
+          </button>
+          {/* Mensagem carinhosa abaixo do botão */}
+          <div
+            style={{
+              marginTop: '18px',
+              color: '#ffb347',
+              fontWeight: 'bold',
+              fontSize: '1.08rem',
+              textShadow: '0 0 8px #ffb34788'
+            }}
+          >
+            Te amo, Leãozinho! Que seu dia seja mágico! 🦁✨
+          </div>
         </div>
       )}
     </div>
