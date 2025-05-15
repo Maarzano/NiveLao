@@ -4,12 +4,27 @@ import SpotifyCard from '../Cards/SpotifyCard';
 import img1 from '../../assets/Images/IMG-1.jpg';
 import img2 from '../../assets/Images/IMG-2.jpg';
 import img3 from '../../assets/Images/IMG-3.jpg';
+import img4 from '../../assets/Images/IMG-4.jpg';
+import img5 from '../../assets/Images/IMG-5.jpg';
+import img6 from '../../assets/Images/IMG-6.jpg';
 
 const emojis = ['💖', '❤️', '💘', '💕', '💓'];
 
 const subir = keyframes`
-  0% { transform: translateY(100vh) scale(0); opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-90vh) scale(1.2) rotate(12deg);
+    opacity: 0;
+  }
 `;
 
 const Container = styled.div`
@@ -99,10 +114,14 @@ const FooterEmoji = styled.span`
 
 const Emoji = styled.span`
   position: absolute;
-  font-size: 2rem;
-  animation: ${subir} 6s linear infinite;
-  left: ${() => Math.random() * 100}%;
-  top: 100%;
+  font-size: 1.5rem; // tamanho reduzido
+  left: ${({ $left }) => $left}%;
+  bottom: -40px;
+  animation: ${subir} ${({ $duration }) => $duration}s linear infinite;
+  animation-delay: ${({ $delay }) => $delay}s;
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
 `;
 
 const MainView = () => {
@@ -112,7 +131,10 @@ const MainView = () => {
   const fotos = [
     img1,
     img2,
-    img3
+    img3,
+    img4,
+    img5,
+    img6
   ];
 
   const dataInicio = new Date('2024-04-19T00:00:00');
@@ -141,10 +163,27 @@ const MainView = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const [floatingEmojis] = useState(() =>
+    Array.from({ length: 15 }).map((_, i) => ({
+      key: i,
+      emoji: emojis[i % emojis.length],
+      left: Math.random() * 85 + 5,
+      duration: 5 + Math.random() * 3,
+      delay: Math.random() * 6
+    }))
+  );
+
   return (
     <Container>
-      {Array.from({ length: 15 }).map((_, i) => (
-        <Emoji key={i}>{emojis[i % emojis.length]}</Emoji>
+      {floatingEmojis.map(({ key, emoji, left, duration, delay }) => (
+        <Emoji
+          key={key}
+          $left={left}
+          $duration={duration}
+          $delay={delay}
+        >
+          {emoji}
+        </Emoji>
       ))}
       <SpotifyCard />
       <Carousel>
