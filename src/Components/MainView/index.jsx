@@ -98,6 +98,7 @@ const FooterName = styled.span`
   font-weight: bold;
   font-size: 1.13rem;
   margin-left: 4px;
+  text-shadow: 0 0 8px #ff4da6, 0 0 16px #fff2;
 `;
 
 const FooterEmoji = styled.span`
@@ -122,6 +123,47 @@ const Emoji = styled.span`
   user-select: none;
   pointer-events: none;
   z-index: 2;
+`;
+
+const Parabens = styled.div`
+  font-size: 2.1rem;
+  color: #ffb347;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const IdadeBadge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  background: #ff4da6;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 18px;
+  padding: 4px 16px 4px 10px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 12px #ff4da655;
+  animation: pulse 1.2s infinite alternate;
+  gap: 6px;
+  @keyframes pulse {
+    0% { box-shadow: 0 2px 12px #ff4da655; }
+    100% { box-shadow: 0 2px 24px #ff4da6cc; }
+  }
+`;
+
+const NomeLeao = styled.span`
+  color: #ffb347;
+  font-weight: bold;
+  font-size: 1.15em;
+  margin-left: 4px;
+  text-shadow: 0 0 8px #ffb34788;
 `;
 
 const MainView = () => {
@@ -186,15 +228,31 @@ const MainView = () => {
         </Emoji>
       ))}
       <SpotifyCard />
+      <Parabens>
+        <span>
+          <span role="img" aria-label="leão">🦁</span> Feliz aniversário meu Leãozinho!
+        </span>
+        <IdadeBadge>
+          <span role="img" aria-label="coroa">👑</span>
+          20 anos
+        </IdadeBadge>
+      </Parabens>
       <Carousel>
         {fotos.map((foto, i) => (
           <Imagem key={i} src={foto} alt={`foto-${i}`} active={i === index} />
         ))}
       </Carousel>
-      <Contador>Eu te amo há: <strong>{timeTogether}</strong></Contador>
+      <Contador>
+        <strong>
+          {`Estamos juntos há ${timeTogether}`}
+        </strong>
+      </Contador>
       <Linha />
       <TextoFofo>
-        Leãozinho, você é minha alegria diária. Que nossa história continue doce como este momento. 🦁💗
+        Parabéns, <NomeLeao>Leãozinho</NomeLeao>!<br />
+        Você ilumina minha vida todos os dias.<br />
+        Que seus 20 anos sejam tão lindos quanto o seu sorriso.<br />
+        Te amo infinitamente! 🦁💗
       </TextoFofo>
       <Footer>
         <FooterEmoji>👼🏼</FooterEmoji>
