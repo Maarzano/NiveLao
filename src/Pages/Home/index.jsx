@@ -6,7 +6,12 @@ const mensagens = [
   'Olá, leãozinho!!',
   'É seu aniversário de... 20 anos, certo?',
   'Tenho algo especial para você... 💖',
-  'Está preparada?'
+  'É algo simples mas foi feito com muito amor e carinho...',
+  'Está preparada?',
+  'Espero que goste meu amor...',
+  '3',
+  '2',
+  '1',
 ];
 
 function App() {

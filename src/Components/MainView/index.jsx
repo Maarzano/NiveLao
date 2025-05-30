@@ -7,6 +7,7 @@ import img3 from '../../assets/Images/IMG-3.jpg';
 import img4 from '../../assets/Images/IMG-4.jpg';
 import img5 from '../../assets/Images/IMG-5.jpg';
 import img6 from '../../assets/Images/IMG-6.jpg';
+import LetterLove from '../LetterLove';
 
 const emojis = ['💖', '❤️', '💘', '💕', '💓'];
 
@@ -254,6 +255,7 @@ const MainView = () => {
         Que seus 20 anos sejam tão lindos quanto o seu sorriso.<br />
         Te amo infinitamente! 🦁💗
       </TextoFofo>
+      <LetterLove mensagem={"Eu te amo"}/>
       <Footer>
         <FooterEmoji>👼🏼</FooterEmoji>
         Com todo meu amor, seu
